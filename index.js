@@ -1,7 +1,11 @@
 "use strict";
 const { parseQuiz } = require('./lib/parse');
+const { installImages, clearImageCache } = require('./lib/images');
 
 module.exports = {
+  setupEleventy(eleventyConfig) {
+    eleventyConfig.on('eleventy.before', clearImageCache);
+  },
   setupMarkdown(md, context = {}) {
     const settings = context.settings || {};
     // Only hex literals enter CSS: invalid settings fall back to the theme.
@@ -14,6 +18,7 @@ module.exports = {
     // Separate renderer prevents nested quiz recursion and disallows raw HTML.
     const safe = require('markdown-it')({ html: false, linkify: true });
     safe.use(require('markdown-it-mathjax3'));
+    installImages(safe, context);
     const esc = md.utils.escapeHtml;
     const previous = md.renderer.rules.fence;
     const isQuiz = token => token.type === 'fence' && token.info.trim() === 'quiz';

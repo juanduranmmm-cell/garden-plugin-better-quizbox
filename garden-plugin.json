@@ -1,7 +1,7 @@
 {
   "id": "better-quizbox",
   "name": "Better Quiz Box for Digital Garden",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Interactive Better Quiz Box quiz fences in published notes.",
   "author": "Digital Garden contributors; parser by junzi-ana",
   "hooks": "index.js",

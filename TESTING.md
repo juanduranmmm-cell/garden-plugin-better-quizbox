@@ -24,3 +24,13 @@ The screenshot uses a standalone preview of the same generated quiz HTML, styles
 - Hex validation accepts 3/4/6/8 digits and rejects CSS/attribute injection and non-string values.
 - Chromium computed-style checks passed for background, text, buttons, selection, correct borders, and incorrect backgrounds.
 - Existing rendering checks and the production template build passed again after the color update.
+
+## Version 1.1.1 images
+
+- Obsidian wiki embeds, full vault paths, aliases, width/height, URL encoding, ordinary Markdown images and HTTPS images pass render checks.
+- Duplicate basenames, missing files, path traversal, inline code and unsafe HTML inputs are handled without guessing or injecting markup.
+- Image index refreshes before builds; no symlinks outside the image root are followed.
+- Production build passed without plugin warnings; all 409 template tests passed again.
+- Chromium loaded two images from the compiled site after grading; they stay hidden before answering and after reset, and fit a 375px viewport.
+- The publisher's actual frontmatter parser recognizes both image filenames from the reported note.
+- Files that exist only inside the local Obsidian vault still require publishing, e.g. via the documented quiz-images frontmatter list. A garden-side plugin cannot upload local vault files.

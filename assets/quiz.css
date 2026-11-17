@@ -10,6 +10,8 @@
 .bqb-option:focus-within { outline: 2px solid var(--bqb-accent, var(--dg-text-accent, #6554c0)); outline-offset: 2px; }
 .bqb-text { flex: 1; min-width: 0; overflow-wrap: anywhere; }
 .bqb-text pre { overflow-x: auto; }
+.bqb img { max-width: 100%; height: auto; display: block; margin: .5rem 0; }
+.bqb-image-missing { display: block; border: 1px dashed currentColor; padding: .6rem; overflow-wrap: anywhere; }
 .bqb-number:empty { display: none; }
 .bqb-selected { background: var(--bqb-selected, #7771); }
 .bqb-correct { border-color: var(--bqb-correct, #27844c); background: var(--bqb-correct-background, #27844c18); }

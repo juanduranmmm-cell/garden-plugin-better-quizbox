@@ -72,7 +72,7 @@ No vault-wide indexing, ID rewriting, favorites, spaced-repetition scheduling, e
 
 ## Publish as a garden plugin
 
-Place the contents of this directory at the root of a public repository, such as `garden-plugin-better-quizbox`. Review the author field, then tag `v1.1.0`. Users can install through its repository URL. For the community directory, submit an entry to `oleeskild/digitalgarden-plugins/community-plugins.json` using `screenshot.png`.
+Place the contents of this directory at the root of a public repository, such as `garden-plugin-better-quizbox`. Review the author field, then tag `v1.1.1`. Users can install through its repository URL. For the community directory, submit an entry to `oleeskild/digitalgarden-plugins/community-plugins.json` using `screenshot.png`.
 
 ## License and attribution
 
@@ -115,3 +115,52 @@ Deja todos los campos de color vacíos para volver a usar el tema del jardín.
 Elige combinaciones con suficiente contraste para mantener legible el texto.
 
 ![Ejemplo de colores personalizados](screenshot-colors.png)
+
+## Imágenes de Obsidian (v1.1.1)
+
+Los quizzes admiten `![[imagen.jpg]]`, rutas como `![[Adjuntos/imagen.jpg]]`,
+ancho `![[imagen.jpg|400]]` y alias `![[imagen.jpg|Descripción|400x250]]`.
+Se resuelven contra las imágenes ya publicadas en `src/site/img/user/`.
+También funcionan imágenes Markdown y URLs HTTPS.
+
+**Importante:** Digital Garden trata los bloques de código como texto literal.
+Una imagen referenciada solo dentro de `quiz` no se sube automáticamente desde
+el vault. Añade sus nombres a una lista `quiz-images` en el frontmatter de
+la misma nota y vuelve a publicarla para incluir los archivos:
+
+````markdown
+---
+dg-publish: true
+quiz-images:
+  - "[[imagen.jpg]]"
+  - "[[otra-imagen.png]]"
+---
+
+```quiz
+Pregunta
+[ ] Incorrecta
+[c] Correcta
+[h] ![[imagen.jpg|400]]
+![[otra-imagen.png]]
+```
+````
+
+Si la nota ya tiene un bloque de propiedades `---`, agrega `quiz-images` ahí.
+No crees un segundo bloque. Otra opción es publicar esas imágenes desde una
+nota normal fuera de los bloques de código. Si hay archivos con el mismo
+nombre en distintas carpetas, usa la ruta completa desde la raíz del vault.
+Los formatos locales admitidos son PNG, JPG, JPEG, GIF, WebP y SVG.
+
+Una imagen que todavía no se publicó muestra un aviso legible en lugar de
+un icono roto. El plugin puede leer los archivos del sitio al compilar, pero
+no puede acceder directamente a los adjuntos que solo existen en tu vault.
+
+### Actualizar desde 1.1.0 en Forestry
+
+Sube el contenido completo de esta versión al repositorio del plugin,
+conservando `assets/` y `lib/` (ahora incluye `lib/images.js`). Si tu repositorio
+tiene releases, publica `v1.1.1`. En Obsidian abre Digital Garden → Plugins →
+Manage plugins → Installed → Better Quiz Box → Update, confirma y publica de
+nuevo las notas con la propiedad `quiz-images`.
+
+![Imágenes en el quiz después de responder](screenshot-images.png)
