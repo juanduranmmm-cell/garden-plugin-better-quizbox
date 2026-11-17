@@ -1,0 +1,127 @@
+{
+  "id": "better-quizbox",
+  "name": "Better Quiz Box for Digital Garden",
+  "version": "1.1.0",
+  "description": "Interactive Better Quiz Box quiz fences in published notes.",
+  "author": "Digital Garden contributors; parser by junzi-ana",
+  "hooks": "index.js",
+  "styles": [
+    "assets/quiz.css"
+  ],
+  "scripts": [
+    "assets/quiz.js"
+  ],
+  "settings": [
+    {
+      "key": "mode",
+      "name": "Default mode",
+      "type": "select",
+      "options": [
+        "non-immediate",
+        "immediate",
+        "static"
+      ],
+      "default": "non-immediate"
+    },
+    {
+      "key": "shuffle",
+      "name": "Shuffle options",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "number",
+      "name": "Option numbering",
+      "type": "select",
+      "options": [
+        "abc",
+        "123",
+        "none"
+      ],
+      "default": "abc"
+    },
+    {
+      "key": "submit",
+      "name": "Allow grading",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "backgroundColor",
+      "name": "Quiz background",
+      "type": "text",
+      "default": "",
+      "description": "Hex color, e.g. #7c3aed. Leave empty to use the default theme."
+    },
+    {
+      "key": "textColor",
+      "name": "Quiz text",
+      "type": "text",
+      "default": "",
+      "description": "Hex color, e.g. #7c3aed. Leave empty to use the default theme."
+    },
+    {
+      "key": "borderColor",
+      "name": "Borders",
+      "type": "text",
+      "default": "",
+      "description": "Hex color, e.g. #7c3aed. Leave empty to use the default theme."
+    },
+    {
+      "key": "accentColor",
+      "name": "Focus and hint accent",
+      "type": "text",
+      "default": "",
+      "description": "Hex color, e.g. #7c3aed. Leave empty to use the default theme."
+    },
+    {
+      "key": "selectedColor",
+      "name": "Selected option background",
+      "type": "text",
+      "default": "",
+      "description": "Hex color, e.g. #7c3aed. Leave empty to use the default theme."
+    },
+    {
+      "key": "correctColor",
+      "name": "Correct answer border",
+      "type": "text",
+      "default": "",
+      "description": "Hex color, e.g. #7c3aed. Leave empty to use the default theme."
+    },
+    {
+      "key": "correctBackgroundColor",
+      "name": "Correct answer background",
+      "type": "text",
+      "default": "",
+      "description": "Hex color, e.g. #7c3aed. Leave empty to use the default theme."
+    },
+    {
+      "key": "incorrectColor",
+      "name": "Incorrect answer border",
+      "type": "text",
+      "default": "",
+      "description": "Hex color, e.g. #7c3aed. Leave empty to use the default theme."
+    },
+    {
+      "key": "incorrectBackgroundColor",
+      "name": "Incorrect answer background",
+      "type": "text",
+      "default": "",
+      "description": "Hex color, e.g. #7c3aed. Leave empty to use the default theme."
+    },
+    {
+      "key": "buttonColor",
+      "name": "Button background",
+      "type": "text",
+      "default": "",
+      "description": "Hex color, e.g. #7c3aed. Leave empty to use the default theme."
+    },
+    {
+      "key": "buttonTextColor",
+      "name": "Button text",
+      "type": "text",
+      "default": "",
+      "description": "Hex color, e.g. #7c3aed. Leave empty to use the default theme."
+    }
+  ]
+}
