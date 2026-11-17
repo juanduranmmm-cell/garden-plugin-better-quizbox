@@ -1,0 +1,23 @@
+.bqb { border: 1px solid var(--bqb-border, var(--dg-border-color, #8886)); border-radius: .75rem; padding: 1.25rem; margin: 1.5rem 0; color: var(--bqb-text, var(--dg-text-normal, inherit)); background: var(--bqb-background, var(--dg-background-primary, transparent)); }
+.bqb [hidden] { display: none !important; }
+.bqb-question > :first-child, .bqb-text > :first-child { margin-top: 0; }
+.bqb-question > :last-child, .bqb-text > :last-child { margin-bottom: 0; }
+.bqb-instruction { font-size: .85em; opacity: .75; }
+.bqb-options { display: grid; gap: .6rem; }
+.bqb-option { border: 1px solid var(--bqb-border, var(--dg-border-color, #8886)); border-radius: .4rem; }
+.bqb-option label { display: flex; gap: .65rem; align-items: baseline; padding: .75rem; cursor: pointer; }
+.bqb-option input { accent-color: var(--bqb-accent, var(--dg-text-accent, #6554c0)); flex-shrink: 0; }
+.bqb-option:focus-within { outline: 2px solid var(--bqb-accent, var(--dg-text-accent, #6554c0)); outline-offset: 2px; }
+.bqb-text { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.bqb-text pre { overflow-x: auto; }
+.bqb-number:empty { display: none; }
+.bqb-selected { background: var(--bqb-selected, #7771); }
+.bqb-correct { border-color: var(--bqb-correct, #27844c); background: var(--bqb-correct-background, #27844c18); }
+.bqb-wrong { border-color: var(--bqb-incorrect, #c24444); background: var(--bqb-incorrect-background, #c2444418); }
+.bqb-mark { font-weight: bold; }
+.bqb-hint { border-left: 3px solid var(--bqb-accent, var(--dg-text-accent, #6554c0)); padding-left: 1rem; margin-top: 1rem; }
+.bqb-actions { display: flex; gap: .6rem; flex-wrap: wrap; }
+.bqb button { font: inherit; color: var(--bqb-button-text, inherit); background: var(--bqb-button, transparent); border: 1px solid var(--bqb-border, var(--dg-border-color, #8886)); border-radius: .35rem; padding: .45rem .9rem; cursor: pointer; }
+.bqb button:disabled { opacity: .5; cursor: default; }
+.bqb:not([data-ready]) input { display: none; }
+.bqb:not([data-ready]) [data-correct="true"]::after { content: '✓ Correct answer'; display: block; padding: .5rem; }
